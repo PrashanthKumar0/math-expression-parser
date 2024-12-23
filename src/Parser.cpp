@@ -59,7 +59,7 @@ std::shared_ptr<Expression> Parser::parse_multiplicative_expr()
             opType = OperationType::Div;
         }
 
-        std::shared_ptr<Expression> right{ parse_multiplicative_expr() };
+        std::shared_ptr<Expression> right{ parse_primary_expr() };
         left = std::make_shared<BinaryExpr>(left, right, opType);
     }
 
